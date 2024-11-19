@@ -1,0 +1,120 @@
+// --------------------------------------------------------------------------------MBCitaroC2cb
+
+spriteset(ss_MBCitaroC2cb_purchase, "src/Citaro2e_c_a_BLT_new_BUY_8bpp.png")		{tmpl_purchase()} // Vásárlási jármű
+
+spriteset(ss_MBCitaroC2cb_1, "src/Citaro2e_c_a_BLT_new_1x_8bpp.png")		{tmpl_1(1)}
+alternative_sprites(ss_MBCitaroC2cb_1, ZOOM_LEVEL_IN_2X, BIT_DEPTH_8BPP, "src/Citaro2e_c_a_BLT_new_2x_8bpp.png") {tmpl_1(2)}
+alternative_sprites(ss_MBCitaroC2cb_1, ZOOM_LEVEL_IN_4X, BIT_DEPTH_8BPP, "src/Citaro2e_c_a_BLT_new_4x_8bpp.png") {tmpl_1(4)}
+spriteset(ss_MBCitaroC2cb_1i, "src/Citaro2e_c_a_BLT_new_8bpp.png")		{tmpl_depo()}
+
+// Rakodási grafika
+spritegroup sg_MBCitaroC2cb_1 {	loaded:  [ss_MBCitaroC2cb_1];	loading: [ss_MBCitaroC2cb_1];}
+
+// Lista grafika
+switch (FEAT_ROADVEHS, SELF, sw1_MBCitaroC2cb_1i, position_in_consist ) {
+    1: ss_toldat;
+    ss_MBCitaroC2cb_1i;
+}
+
+// Játék grafika
+switch (FEAT_ROADVEHS, SELF, sw1_MBCitaroC2cb_1, position_in_consist ) {
+    1: ss_toldat;
+    sg_MBCitaroC2cb_1;
+}
+
+// Rajz
+switch(FEAT_ROADVEHS, SELF, sw_MBCitaroC2cb, (extra_callback_info1 & 0x12)) {
+   0x10: sw1_MBCitaroC2cb_1i; // Depó nézet
+   0x11: sw1_MBCitaroC2cb_1i; // Jármű infó/Refit nézet
+   0x12: sw1_MBCitaroC2cb_1i; // Jármű lista nézet
+   0x00: sw1_MBCitaroC2cb_1; // Játék nézet
+}
+
+// Csuklosítás
+switch (FEAT_ROADVEHS, SELF, sw_MBCitaroC2cb_articulated, extra_callback_info1) {
+    0: item_MBCitaroC2cb;
+    1: item_MBCitaroC2cb_T;
+    CB_RESULT_NO_MORE_ARTICULATED_PARTS;
+}
+
+// Modelhossz
+switch (FEAT_ROADVEHS, SELF, sw_MBCitaroC2cb_length, position_in_consist) {
+	1: return 8;
+    return 5;
+}
+
+// Szövegek
+switch(FEAT_ROADVEHS, SELF, sw_MBCitaroC2cb_namep, (extra_callback_info1 >> 8) & 0xFFFF) {
+    1: return string(STR_MBCitaroC2cb_BUY);
+	return CB_RESULT_NO_TEXT;
+}
+switch(FEAT_ROADVEHS, SELF, sw_MBCitaroC2cb_name, extra_callback_info1 & 0xFF) {
+    0x11: return string(STR_MBCitaroC2cb_INFO); // Jármű infóban név
+    0x20: sw_MBCitaroC2cb_namep; // Vásárlási lista név
+	0x21: return string(STR_MBCitaroC2cb_NAME); // Elővásárlási név
+	return CB_RESULT_NO_TEXT;
+}
+
+
+item(FEAT_ROADVEHS, item_MBCitaroC2cb) {
+	property {
+        name:								string(STR_MBCitaroC2c_NAME);
+        climates_available:				bitmask(CLIMATE_TEMPERATE, CLIMATE_ARCTIC, CLIMATE_TROPICAL);
+        introduction_date:				date(1980,02,01);
+        model_life:						25;
+        vehicle_life:						50;
+        reliability_decay:				20;
+        refittable_cargo_classes:		bitmask(CC_PASSENGERS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					30;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        speed:								65 km/h;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_ROADVEH;
+        power:								180 kW;
+        weight:							19 ton;
+        cargo_capacity:					100;
+		cargo_age_period:					185;
+        sound_effect:						SOUND_POWER_STATION;
+		variant_group:					item_MBCitaroC2ca;
+    }
+    graphics {
+		default:                 		sw_MBCitaroC2cb;
+		purchase:						ss_MBCitaroC2cb_purchase;
+		articulated_part:        		sw_MBCitaroC2cb_articulated;
+		length:                  		sw_MBCitaroC2cb_length;
+		cost_factor:					22 * parapuco;
+		running_cost_factor:			27 * pararuco;
+		additional_text: 				string(STR_MBCitaroC2cb_ADAT);
+		name:							sw_MBCitaroC2cb_name;
+    }
+}
+item(FEAT_ROADVEHS, item_MBCitaroC2cb_T) {
+	property {
+        name:								string(STR_BUG);
+        climates_available:				bitmask(CLIMATE_TOYLAND);
+        introduction_date:				date(4999999,01,01);
+        refittable_cargo_classes:		bitmask(NO_CARGO_CLASS);
+        non_refittable_cargo_classes:	bitmask(CC_PIECE_GOODS, CC_EXPRESS, CC_REFRIGERATED);
+        loading_speed:					0;
+        cost_factor:						0;
+        running_cost_factor:				0;
+        sprite_id:							SPRITE_ID_NEW_ROADVEH;
+        misc_flags:						bitmask(ROADVEH_FLAG_2CC, ROADVEH_FLAG_SPRITE_STACK);
+        refit_cost:						0;
+        running_cost_base:				RUNNING_COST_NONE;
+        power:								0 kW;
+        weight:							0 ton;
+        cargo_capacity:					0;
+		cargo_age_period:					0;
+    }
+    graphics {
+		default:                 		ss_toldat;
+		length:                  		sw_MBCitaroC2cb_length;
+    }
+}
+
+// --------------------------------------------------------------------------------MBCitaroC2cb End
+// --
+// --

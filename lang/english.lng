@@ -3,7 +3,7 @@
 
 # GRF name and description definitions	
 STR_GRF_NAME	:SweDuke Vehicle Set
-STR_GRF_DESC	:{}{LTBLUE}Tram Set{}{BLACK}Code and model:{GREEN}SosMakaroni{} {COPYRIGHT}2022 SosMakaroni{}{BLACK}Recolor:{GREEN}SweDuke{}{GRAY}License: GPLv2{}{BLACK}Ver.6 2024.11.19.
+STR_GRF_DESC	:{}{LTBLUE}Tram Set{}{BLACK}Code and model:{GREEN}SosMakaroni{} {COPYRIGHT}2022 SosMakaroni{}{BLACK}Recolor:{GREEN}SweDuke{}{GRAY}License: GPLv2{}{BLACK}Ver.8 2024.11.19.
 
 STR_BUG	:Toyland bug, sorry :(
 
@@ -35,3 +35,15 @@ STR_MBCitaroC2b_NAME	:Mercedes Benz Citaro
 STR_MBCitaroC2b_ADAT	:{GOLD}----------{BLACK}{}Random text :D
 STR_MBCitaroC2b_INFO	:Mercedes Benz Citaro
 STR_MBCitaroC2b_BUY	:3 doors - BLT new livery
+
+STR_MBCitaroC2c_NAME	:Mercedes Benz eCitaro
+
+STR_MBCitaroC2ca_NAME	:Mercedes Benz eCitaro
+STR_MBCitaroC2ca_ADAT	:{GOLD}----------{BLACK}{}Random text :D
+STR_MBCitaroC2ca_INFO	:Mercedes Benz eCitaro
+STR_MBCitaroC2ca_BUY	:3 doors - BLT old livery
+
+STR_MBCitaroC2cb_NAME	:Mercedes Benz eCitaro
+STR_MBCitaroC2cb_ADAT	:{GOLD}----------{BLACK}{}Random text :D
+STR_MBCitaroC2cb_INFO	:Mercedes Benz eCitaro
+STR_MBCitaroC2cb_BUY	:3 doors - BLT new livery
