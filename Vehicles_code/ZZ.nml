@@ -1,0 +1,4 @@
+sort(FEAT_ROADVEHS, [
+	item_MBCitaroC2a,
+	item_MBCitaroC2b
+	]);

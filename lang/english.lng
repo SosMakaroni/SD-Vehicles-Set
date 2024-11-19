@@ -1,0 +1,37 @@
+﻿##grflangid 0x01
+# This is the English language file
+
+# GRF name and description definitions	
+STR_GRF_NAME	:SweDuke Vehicle Set
+STR_GRF_DESC	:{}{LTBLUE}Tram Set{}{BLACK}Code and model:{GREEN}SosMakaroni{} {COPYRIGHT}2022 SosMakaroni{}{BLACK}Recolor:{GREEN}SweDuke{}{GRAY}License: GPLv2{}{BLACK}Ver.6 2024.11.19.
+
+STR_BUG	:Toyland bug, sorry :(
+
+STR_PARAM_BUY_NAME	:Purchase cost
+STR_PARAM_BUY_DESC	:For players who want to choose the purchase cost.
+STR_PARAM_MAINTENANCE_NAME	:Maintenance costs
+STR_PARAM_MAINTENANCE_DESC	:For players who want to choose the cost of maintenance.
+STR_PARAM_GAME_VERY_EASY	:/4
+STR_PARAM_GAME_EASY	:/2
+STR_PARAM_GAME_NORMAL	:1 {SILVER} By default{BLACK}
+STR_PARAM_GAME_HARD	:x2
+STR_PARAM_GAME_VERY_HARD	:x4
+STR_PARAM_CARGOC_NAME:Cargo capacity
+STR_PARAM_CARGOC_DESC:For players who want to choose the cargo capacity multiplier.
+STR_PARAM_CARGOC_1:x1 {SILVER} By default{BLACK}
+STR_PARAM_CARGOC_2:x2
+STR_PARAM_CARGOC_4:x4
+STR_PARAM_CARGOC_8:x8
+
+
+STR_MBCitaroC2_NAME	:Mercedes Benz Citaro
+
+STR_MBCitaroC2a_NAME	:Mercedes Benz Citaro
+STR_MBCitaroC2a_ADAT	:{GOLD}----------{BLACK}{}Random text :D
+STR_MBCitaroC2a_INFO	:Mercedes Benz Citaro
+STR_MBCitaroC2a_BUY	:3 doors - BLT old livery
+
+STR_MBCitaroC2b_NAME	:Mercedes Benz Citaro
+STR_MBCitaroC2b_ADAT	:{GOLD}----------{BLACK}{}Random text :D
+STR_MBCitaroC2b_INFO	:Mercedes Benz Citaro
+STR_MBCitaroC2b_BUY	:3 doors - BLT new livery
